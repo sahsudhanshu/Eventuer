@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventuer</title>
+    <link rel="shortcut icon" href="./Images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+    <div class="left-section"></div>
+
+    <div class="right-section">
+        <div class="video-background">
+            <video autoplay muted loop id="bg-video">
+                <source src="../../videos/bg login.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="content">
+            <div class="toggle-buttons">
+                <button class="user active" id="user" onclick="toggleButton(this,'user')">Looking for an Event</button>
+                <button class="user" id="organizer" onclick="toggleButton(this,'user')">Organising an Event</button>
+            </div>
+            <div class="container">
+
+                <div class="auth-buttons">
+                    <button class="log active" id="login" onclick="toggleButton(this,'log')">Login</button>
+                    <button class="log " onclick="toggleButton(this,'log')">Signup</button>
+                </div>
+
+
+                <div class="input-container">
+                    <input type="text" placeholder="Username">
+                    <input type="password" placeholder="Password">
+                </div>
+                <div class="auth-buttons">
+                    <button class=""  onclick="login()">OK</button>
+                    <a href="../overview.html"></a><button class="log ">Cancel</button>
+                </div>
+
+                <div class="forgot-links">
+                    <a href="#">Forgot Username</a>
+                    <a href="#">Forgot Password</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleButton(clickedButton,type) {
+            var buttons = Array.from(document.getElementsByClassName(`${type}`));
+
+            buttons.forEach(function (button) {
+                button.classList.remove('active');
+                button.classList.add('inactive');
+            });
+
+
+            clickedButton.classList.add('active');
+            clickedButton.classList.remove('inactive');
+        }
+        function login() {
+            var user = document.getElementById('user').classList.contains('active');
+            var login = document.getElementById('login').classList.contains('active');
+            if (login) {
+                if(user){
+                    window.location.href = "https://eventuer.netlify.app/user/user.html"
+                }
+                else {
+                    
+                    window.location.href = "https://eventuer.netlify.app/organiser/organiser.html"
+                }
+            }
+            
+        }
+    </script>
+</body>
+
+</html>

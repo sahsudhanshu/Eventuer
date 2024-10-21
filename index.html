@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventuer</title>
+    <link rel="shortcut icon" href="./Images/favicon.png" type="image/x-icon">
+    <style>
+        .preloader{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .preloader video{
+            height: 50vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="preloader">
+        <video src="./videos/preloader.mp4" autoplay muted></video>
+    </div>
+    <script>
+        setTimeout(() => {
+            window.location.href ="https://eventuer.netlify.app/overview.html";
+        }, 4000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,388 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    /* display: flex; */
+    /* justify-content: center;
+    align-items: center; */
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1; /* Sends the video behind the content */
+}
+
+#bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    background-size: cover;
+    object-fit: cover;
+}
+
+/* Content on top of the video */
+.content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+}
+
+/* Navbar */
+.navbar {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.2);
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.search-bar {
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+.icons img {
+    width: 40px;
+    margin-left: 15px;
+}
+
+/* Filters Section */
+.filters {
+    background-color: transparent;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    align-items: center;
+}
+
+.filters a {
+    font-family: Poppins;
+    color: #333;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+    margin-inline-end: 10%;
+
+}
+
+/* Event Cards */
+.events {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 20px;
+}
+
+.event-card {
+    background-color: transparent;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
+}
+
+.event-card img {
+    width: 100%;
+    height: auto;
+}
+
+.event-info {
+    padding: 20px;
+}
+
+.event-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.event-info p {
+    font-size: 16px;
+    color: #666;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    background-color: #4a4a4a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #3b3b3b; 
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 400px;
+    background-color: #ECECEC;
+    border-radius: 30px;
+    padding: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 16px;
+    padding-left: 10px;
+    color: #333;
+}
+
+.search-input::placeholder {
+    color: #888;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 10px;
+    margin-top: 4px;
+
+}
+
+.search-button img {
+    width: 20px;
+    height: 20px;
+}
+
+
+.profile-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-icon {
+    /* width: 30px; */
+    /* height: 30px; */
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    z-index: 1;
+    width: 120px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.dropdown-content a:hover {
+    background-color: #ff4141;
+
+}
+
+.profile-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+.notification-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.notification-icon {
+
+    cursor: pointer;
+}
+
+.notification-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    color: #888;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    z-index: 1;
+    width: 200px;
+}
+
+.notification-content a {
+    color: black;
+    
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.notification-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.notification-dropdown:hover .notification-content {
+    display: block;
+}
+
+.ticket-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.ticket-icon {
+    width: 25px;
+    cursor: pointer;
+}
+
+.ticket-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    z-index: 1;
+    width: 200px;
+    text-align: center;
+    padding: 10px;
+}
+
+.no-tickets {
+    color: #888;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.ticket-dropdown:hover .ticket-content {
+    display: block;
+}
+
+
+.calendar-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.calendar-icon {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.calendar-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #060606;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    z-index: 1;
+    width: 250px;
+    padding: 15px;
+}
+
+.calendar-header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.month {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+
+.weekdays {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: white;
+}
+
+.days {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.days span {
+    width: 14%;
+    text-align: center;
+    padding: 5px;
+    font-size: 12px;
+    color: white;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.days span:hover {
+    background-color: #eee;
+    color: black;
+}
+
+.prev-month,
+.next-month {
+    color: #aaa;
+}
+
+.calendar-dropdown:hover .calendar-content {
+    display: block;
+}
+
